@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>m4rkyyy // hidden artifact</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sixtyfour&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="GkVIWf-WQAAcQZf.png" image/x-icon">
+</head>
+
+<body ondragstart="return false;" ondrop="return false;">
+    <div id="overlay" class="overlay"> <!-- cte page taken from my old site cshmark.xyz -->
+        <p>click to enter</p>
+    </div>
+    <div class="container">
+        <img src="xavleg.png" width="760px" alt="xavlegbmaofffassssitimiwoamndutroabcwapwaeiippohfffx"> <!-- i like this logo ngl -->
+        <h1>m4rkyyy</h1>
+        <p>aka. hidden artifact // aka. ^v (wvwv999)</p>
+    </div>
+</body>
+
+<script>
+    var audio = new Audio('./song.mp3'); // song name is friends past reunited (mark's take)
+    audio.volume = .2;
+    audio.loop = true;
+
+    document.getElementById('overlay').addEventListener('click', function () {
+        this.classList.add('fade-out');
+        document.body.classList.remove('no-scroll');
+        audio.play();
+    });
+</script>
+</html>
