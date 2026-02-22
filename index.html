@@ -1,0 +1,257 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <link rel="icon" type="image/x-icon" href="/assets/other/hina-kagiyama-hina.gif">
+
+    <link rel="stylesheet" href="assets/css/s.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
+
+    <meta name="og:title" content="github.com/wvwv999">
+    <meta property="og:image" content="/assets/other/asdasdasd.jpg">
+    <meta property="og:description" content="hidden artifact">
+    <meta property="theme-color" content="#FF00D1">
+
+    <title>@</title>
+</head>
+
+<body>
+    <div id="particles-js"></div>
+    <div id="overlay" class="overlay">
+        <div class="rain front-row">
+            <div class="drop">
+                <div class="stem"></div>
+                <div class="splat"></div>
+            </div>
+        </div>
+        <h1>click to enter</h1>
+    </div>
+
+    <div class="title">
+        <img src="assets/other/hina-kagiyama-hina.gif" width="50px">
+        <h2>cshmark.xyz</h2>
+        <img src="assets/other/hina-kagiyama-hina.gif" width="50px">
+    </div>
+
+    <div class="cigany">
+        <span id="typed"></span>
+    </div>
+
+    <div class="fos">
+        <p>visit <a href="https://www.youtube.com/@wvwv-999">here</a> to listen to my music</p>
+    </div>
+
+    <script src="assets/js/particles.min.js"></script>
+    <script src="assets/js/typed.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script>
+        var audio = new Audio('assets/other/bgm.mp3');
+        audio.volume = 0.5;
+        audio.loop = true;
+
+        var typed;
+        function startTyped() {
+            typed = new Typed("#typed", {
+                strings: ["into left 4 dead since 2015", "hina kagiyama is my wife", "deathcrush", "deathcrush", "the hidden artifact", "owning nabz", "gimme coffee plz"],
+                typeSpeed: 25,
+                backSpeed: 5,
+                backDelay: 1350,
+                startDelay: 600,
+                loop: true
+            });
+        }
+
+        function removeoverlay() {
+            var overlay = document.getElementById('overlay');
+            overlay.classList.add('fade-out');
+            document.body.classList.remove('no-scroll');
+            audio.play();
+            startTyped();
+
+            setTimeout(() => {
+                document.body.classList.add('show-content');
+            }, 300);
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var overlay = document.getElementById('overlay');
+            window.addEventListener('load', function () {
+                overlay.addEventListener('click', removeoverlay);
+            });
+        });
+
+        function animateTitle(title) {
+            let originalTitle = title;
+            let baseTitle = "@";
+            let textToAnimate = originalTitle.slice(1);
+            let currentIndex = 0;
+            let isRemoving = true;
+
+            function updateTitle() {
+                if (isRemoving) {
+                    document.title = baseTitle + textToAnimate.slice(0, -currentIndex);
+                    currentIndex++;
+                    if (currentIndex > textToAnimate.length) {
+                        isRemoving = false;
+                        currentIndex = 1;
+                    }
+                } else {
+                    document.title = baseTitle + textToAnimate.slice(0, currentIndex);
+                    currentIndex++;
+                    if (currentIndex > textToAnimate.length) {
+                        isRemoving = true;
+                        currentIndex = 1;
+                    }
+                }
+            }
+
+            setInterval(updateTitle, 200);
+        }
+
+        animateTitle("@wvwv999");
+
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#000000"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    },
+                    "image": {
+                        "src": "img/github.svg",
+                        "width": 100,
+                        "height": 100
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 0,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#FF00D1",
+                    "opacity": 1,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 4,
+                    "direction": "bottom",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": false,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": false,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 400,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+
+        var makeItRain = function () {
+            $('.rain').empty();
+
+            var increment = 0;
+            var drops = "";
+            var backDrops = "";
+
+            while (increment < 100) {
+                var randoHundo = (Math.floor(Math.random() * (98 - 1 + 1) + 1));
+                var randoFiver = (Math.floor(Math.random() * (5 - 2 + 1) + 2));
+                increment += randoFiver;
+                drops += '<div class="drop" style="left: ' + increment + '%; bottom: ' + (randoFiver + randoFiver - 1 + 100) + '%; animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"><div class="stem" style="animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"></div><div class="splat" style="animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"></div></div>';
+                backDrops += '<div class="drop" style="right: ' + increment + '%; bottom: ' + (randoFiver + randoFiver - 1 + 100) + '%; animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"><div class="stem" style="animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"></div><div class="splat" style="animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"></div></div>';
+            }
+
+            $('.rain.front-row').append(drops);
+            $('.rain.back-row').append(backDrops);
+        }
+
+        makeItRain();
+    </script>
+</body>
+
+</html>
