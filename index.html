@@ -39,7 +39,7 @@
 
     <div class="title">
         <img src="assets/other/hina-kagiyama-hina.gif" width="50px">
-        <h2>cshmark.xyz</h2>
+        <h2>^v / hidden artifact / m4rkyyy</h2>
         <img src="assets/other/hina-kagiyama-hina.gif" width="50px">
     </div>
 
@@ -53,6 +53,7 @@
 
     <script src="assets/js/particles.min.js"></script>
     <script src="assets/js/typed.js"></script>
+    <script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
     <script src="assets/js/jquery.min.js"></script>
     <script>
         var audio = new Audio('assets/other/bgm.mp3');
@@ -88,6 +89,10 @@
             window.addEventListener('load', function () {
                 overlay.addEventListener('click', removeoverlay);
             });
+        });
+        
+        window.addEventListener("load", (event) => {
+          new cursoreffects.ghostCursor();
         });
 
         function animateTitle(title) {
@@ -253,5 +258,6 @@
         makeItRain();
     </script>
 </body>
+
 
 </html>
