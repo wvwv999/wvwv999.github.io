@@ -4,6 +4,10 @@
     cursor: default;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     background: #0a0a0a;
@@ -209,4 +213,5 @@ footer {
         opacity: 0;
         transform: scale(1.5);
     }
+
 }
