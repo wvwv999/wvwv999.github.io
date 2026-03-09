@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+* {
+    cursor: default;
+}
+
+body {
+    margin: 0;
+    background: #0a0a0a;
+    color: #e6e6e6;
+    font-family: "Nunito", sans-serif;
+    line-height: 1.6;
+    user-select: none;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.462);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-size: 25px;
+    z-index: 3;
+    user-select: none;
+    transition: opacity 0.5s ease;
+    opacity: 1;
+    backdrop-filter: blur(2px);
+}
+
+.overlay.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+.overlay h1 {
+    text-align: center;
+    font-size: 17px;
+    font-family: Source Code Pro, monospace;
+    animation: popup 0.3s ease-in-out;
+    font-weight: 400;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Nunito", sans-serif;
+}
+
+a {
+    color: #9f8cff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+header {
+    text-align: center;
+    padding: 70px 20px;
+}
+
+header h1 {
+    font-size: 42px;
+    margin-bottom: 5px;
+}
+
+section {
+    max-width: 1000px;
+    margin: auto;
+    padding: 60px 25px;
+}
+
+.faggot {
+    background: #121212;
+    padding: 25px;
+    border: 1px solid #222;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    border: 1px solid #222;
+}
+
+ul {
+    padding-left: 18px;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #777;
+    font-size: 14px;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.rain {
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -99;
+    top: 0;
+}
+
+.rain.back-row {
+    display: none;
+    z-index: -100;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0.5;
+}
+
+.drop {
+    position: absolute;
+    width: 15px;
+    height: 150px;
+    pointer-events: none;
+    animation: drop 0.5s linear infinite;
+}
+
+@keyframes drop {
+    0% {
+        transform: translateY(0vh);
+    }
+
+    75% {
+        transform: translateY(90vh);
+    }
+
+    100% {
+        transform: translateY(90vh);
+    }
+}
+
+.stem {
+    width: 1px;
+    height: 100%;
+    margin-left: 7px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25));
+    animation: stem 0.8s linear infinite;
+}
+
+@keyframes stem {
+    0% {
+        opacity: 1;
+    }
+
+    65% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.splat {
+    width: 15px;
+    height: 10px;
+    border-top: 2px dotted rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    opacity: 1;
+    transform: scale(0);
+    animation: splat 0.5s linear infinite;
+}
+
+@keyframes splat {
+    0% {
+        opacity: 1;
+        transform: scale(0);
+    }
+
+    80% {
+        opacity: 1;
+        transform: scale(0);
+    }
+
+    90% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.5);
+    }
+}
